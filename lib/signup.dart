@@ -26,22 +26,13 @@ class _SignUpState extends State<SignUp> {
             padding: EdgeInsets.symmetric(horizontal: 40),
             child: Column(
                 children:[
-                  Text("Sign up",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),),
-                  SizedBox(height: 10,),
-                  Text("Create an account",
-                    style: TextStyle(
-                        fontSize: 15,
-                        color:Colors.grey[700]),),
+                  Image.asset('assets/signup.png'),
                   SizedBox(height: 40,),
                   Column(
                     children: [
                       inputFile(label: "Username"),
                       SizedBox(height: 20,),
-                      inputFile(label: "Email"),
+                      inputFile(label: "Email Id"),
                       SizedBox(height: 20,),
                       inputFile(label: "Phone Number"),
                       SizedBox(height: 20,),
@@ -50,27 +41,32 @@ class _SignUpState extends State<SignUp> {
                       inputFile(label: "Confirm Password ", obscureText: true),
                     ],
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 10,),
                   Row(children: [
                     Checkbox(
+
+                        activeColor: Color(0xff12734C),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
                         value: checked,
                         onChanged: ((value) {
                           setState(() {
                             checked = value!;
                           });
                         })),
-                    Text("Agree Terms and conditions")
+                    Text("Terms and Conditions")
                   ]),
-                  SizedBox(height: 30,),
+                  SizedBox(height: 20,),
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      width: 200,
-                      height: 50,
+                      width: 118,
+                      height: 35,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: Color(0xff47B5FF),
+                        color: Color(0xff12734C),
                       ),
                       child: Center(
                         child: Text(
@@ -94,9 +90,9 @@ class _SignUpState extends State<SignUp> {
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'Login',
+                        'Sign In',
                         style: TextStyle(
-                          color: Color(0xff47B5FF),
+                          color: Color(0xff12734C),
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -129,15 +125,15 @@ Widget inputFile({label, obscureText = false})
           obscureText: obscureText,
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(horizontal: 10),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide:
+                const BorderSide(color:Color(0xff12734C), width: 1)),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide:
-                const BorderSide(color:Color(0xff47B5FF), width: 1)),
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide:
-                const BorderSide(color: Color(0xff47B5FF), width: 1)),
-            hintText: "Enter the "+label,
+                const BorderSide(color: Color(0xff12734C), width: 1)),
+            hintText: "Enter your "+label,
             fillColor: Color(0xff47B5FF),
           )
       ),
